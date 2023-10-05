@@ -6,6 +6,32 @@ Check out my repo </h1>
 <h3 align="left"> I am a junior Machine Learning Engineer and Data Analyst. Transitioned from a Bsc. in Electrical Engineering through the AZUBI Africa Data intensive , self pased Data Analysis program that spanned 9 months with 7 real life projects and 9+ classroom projects.  </h3>
 
 # **About Me**
+name: Update README
+
+on:
+  push:
+    branches:
+      - main # Change this to your main branch name
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Update README
+      run: |
+        # Generate a new GitHub README with your commit information
+        echo "# **About Me**" > README.md
+        echo "I am a junior Machine Learning Engineer and Data Analyst, eager to contribute in the following areas:" >> README.md
+        echo "[![Elly's GitHub stats](https://github-readme-stats.vercel.app/api?username=ellyokumuazubi&show_icons=true&theme=radical&hide=starts,contribs,prs,issues,)](https://github.com/ellyokumuazubi/github-readme-stats)" >> README.md
+        echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" >> README.md
+        echo "![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ellyokumuazubi&hide_progress=true)" >> README.md
+        git add README.md
+        git commit -m "Update README with latest stats"
+        git push
 
 I am a junior Machine Learning Engineer and Data Analyst, eager to contribute in the following areas:
 [![Elly's GitHub stats](https://github-readme-stats.vercel.app/api?username=ellyokumuazubi&show_icons=true&show_icons=true&theme=radical&hide=starts,contribs,prs,issues,)](https://github.com/ellyokumuazubi/github-readme-stats)
